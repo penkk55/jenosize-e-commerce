@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "f301bc29-46c0-42df-a8de-66ca096a158f",
+		"name": "jenosize-e-ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26835706",
+		"_collection_link": "https://crimson-sunset-963976.postman.co/workspace/Lollow~a12de278-dc9e-4a3d-ba60-5aa4cf7acd8b/collection/26835706-f301bc29-46c0-42df-a8de-66ca096a158f?action=share&source=collection_link&creator=26835706"
+	},
+	"item": [
+		{
+			"name": "/v1/api/orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/v1/api/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/api/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"test1@gmail.com\",\n    \"password\":\"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/v1/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/api/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\n//     \"email\":\"test1@gmail.com\",\n//     \"password\":\"test1\"\n// }\n\n{\n    \"email\":\"penkk55@gmail.com\",\n    \"password\":\"test1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/v1/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "customer1@example.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/v1/api/products?offset=3&limit=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "3"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] orders/:orderId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\":\"1202ee90-d001-412d-b06a-910d049ec29e\",\n    \"products\":[\n\n        {\n            \"productId\":\"ae9689c9-f605-467f-af07-ef95b7fbdd62\",\n            \"quantity\":2\n        },\n         {\n            \"productId\":\"0e1ae13a-c14b-4f0e-af46-0452f23c7bb0\",\n            \"quantity\":1\n        }\n    ],\n    \"total\":400\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/v1/api/orders?orderId=cm4awjd4n00011jwiboyz83jj",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"api",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "cm4awjd4n00011jwiboyz83jj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\":\"574f7370-ec19-4cca-a52f-7201fc23f182\",\n    \"products\":[\n\n        {\n            \"productName\":\"Product 1\",\n            \"quantity\":2\n        },\n         {\n            \"productName\":\"Product 2\",\n            \"quantity\":1\n        }\n    ],\n    \"total\":400\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/v1/api/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

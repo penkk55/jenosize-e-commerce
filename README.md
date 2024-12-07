@@ -57,29 +57,49 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-# DEMO
-
-http://13.236.135.130:8000/
-
 # ER
 
-![alt text](<_E-Commerce Redemption System .png>)
+![alt text](jenosize-e-commerce.png)
 
 # high level design
 
-![alt text](<Screenshot 2567-12-06 at 08.16.44.png>)
-
-# Infrastructure design
-
-![alt text](<Screenshot 2567-12-06 at 08.16.50.png>)
+![alt text](<Screenshot 2567-12-07 at 22.07.26.png>)
 
 # use case
 
-![alt text](<Screenshot 2567-12-06 at 08.16.49.png>)
+![alt text](<Screenshot 2567-12-07 at 22.10.04.png>)
 
-# documentation usecase, High level architecture, Infrastructure, ERD
+# documentation usecase, High level architecture, ERD
 
-https://drive.google.com/file/d/1kclo0Y-sPSMhAauq7jJ6xsAFDayY5bNo/view?usp=sharing
+https://drive.google.com/file/d/1xynGcRKgr8foWy6LlxWa08vbaDlZL8Ux/view?usp=sharing
+
+## Assignment 1: Code Challenge
+
+พัฒนาด้วย Nestjs(ts) structure จะเป็น controller service และใช้ prisma ORM โดย docker compose postgres
+
+- {/v1/api/orders, POST}
+- {/v1/api/orders, GET}
+- {/v1/api/orders/:orderId, GET}
+- {/v1/api/register, POST}
+- {/v1/api/login, POST}
+- {/v1/api/products, GET}
+
+## Assignment 2: Debugging Task
+
+มีการรับ product เป็น array
+
+- {/v1/api/orders, POST}
+
+## Assignment 3: System Design Question
+
+- input email and password แล้ว hash password store in database
+- login ใช้ท่า JWT และ verify ใน auth guard
+
+## Assignment 4: Bonus (Optional)
+
+ข้อเสนอ: การเพิ่มฟีเจอร์แนะนำสินค้าส่วนบุคคลในแพลตฟอร์มอีคอมเมิร์ซ
+
+การเพิ่มฟีเจอร์แนะนำสินค้าส่วนบุคคลในแพลตฟอร์มอีคอมเมิร์ซสามารถช่วยเพิ่มการมีส่วนร่วมของผู้ใช้งาน ความพึงพอใจของลูกค้า และรายได้ โดยใช้ข้อมูลผู้ใช้งานร่วมกับการทำ Machine Learning เพื่อแนะนำสินค้าที่ตรงกับความสนใจ ประวัติการเข้าชม และพฤติกรรมการซื้อของลูกค้า การนำเสนอสินค้าที่เหมาะสมกับแต่ละบุคคลจะช่วยสร้างประสบการณ์การช้อปปิ้งที่ดีขึ้นและมีความเป็นส่วนตัวมากยิ่งขึ้น
 
 ## License
 
