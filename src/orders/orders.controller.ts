@@ -3,9 +3,10 @@ import {
   Get,
   Post,
   Body,
+  Param,
   UseGuards,
+  Headers,
   Req,
-  Request,
 } from '@nestjs/common';
 import { OrdersService } from './orders.service';
 import { CreateOrderDto } from './dto/create-order.dto';
@@ -18,15 +19,19 @@ export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}
 
   @Post()
-  create(@Body() createOrderDto: CreateOrderDto) {
-    return this.ordersService.create(createOrderDto);
+  create(@Body() createOrderDto: CreateOrderDto, @Req() req) {
+    console.log('requser', req.user);
+
+    return this.ordersService.createOrder(createOrderDto, req.user);
   }
 
   @Get()
-  findAll(@Request() req: Request) {
-    console.log('req.user', req['user']);
+  findAll() {
+    return this.ordersService.getOrders();
+  }
 
-    return req['user'];
-    // return this.ordersService.findAll();
+  @Get('/:orderId')
+  findOne(@Param('orderId') id: string) {
+    return this.ordersService.findOne(id);
   }
 }

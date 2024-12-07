@@ -28,8 +28,6 @@ export class AuthGuard implements CanActivate {
       return false;
     }
     const [scheme, credentials] = tokenSplit;
-    console.log('dd', scheme);
-    console.log('ff', credentials);
 
     if (/^Bearer$/i.test(scheme)) {
       const decoded = this.decodeToken(credentials);
