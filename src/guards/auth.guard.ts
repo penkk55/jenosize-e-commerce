@@ -31,7 +31,6 @@ export class AuthGuard implements CanActivate {
 
     if (/^Bearer$/i.test(scheme)) {
       const decoded = this.decodeToken(credentials);
-      console.log('decoded', decoded);
 
       if (!decoded) {
         return false;

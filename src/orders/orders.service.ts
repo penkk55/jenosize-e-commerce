@@ -45,7 +45,6 @@ export class OrdersService {
           },
         },
       });
-      console.log('productPrices', productPrices);
 
       // Check product availability and update stock
       for (const item of products) {
@@ -64,9 +63,6 @@ export class OrdersService {
         }, 0);
 
         if (totalProductPrice !== total) {
-          console.log('totalProductPrice', totalProductPrice);
-          console.log('total', total);
-
           throw new BadRequestException('Total price does not match');
         }
 
@@ -79,7 +75,6 @@ export class OrdersService {
             },
           },
         });
-        console.log('stock', stock);
 
         if (!stock || stock.quantity < item.quantity) {
           throw new BadRequestException(

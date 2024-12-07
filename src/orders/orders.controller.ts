@@ -20,8 +20,6 @@ export class OrdersController {
 
   @Post()
   create(@Body() createOrderDto: CreateOrderDto, @Req() req) {
-    console.log('requser', req.user);
-
     return this.ordersService.createOrder(createOrderDto, req.user);
   }
 
