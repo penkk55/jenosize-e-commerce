@@ -29,8 +29,20 @@
 ## Installation
 
 ```bash
+
+# install postgresql
+$ docker compose up -d
+
+# dependencies
 $ npm install
+
+# prisma migrate
+$ npm run migrate:dev
 ```
+
+## seed data
+
+manually run the sql file in prisma/migrations/20241206142005_init_schema_for_jenosize_e_commerce/seed.sql
 
 ## Running the app
 
@@ -45,29 +57,32 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+# DEMO
 
-```bash
-# unit tests
-$ npm run test
+http://13.236.135.130:8000/
 
-# e2e tests
-$ npm run test:e2e
+# ER
 
-# test coverage
-$ npm run test:cov
-```
+![alt text](<_E-Commerce Redemption System .png>)
 
-## Support
+# high level design
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+![alt text](<Screenshot 2567-12-06 at 08.16.44.png>)
 
-## Stay in touch
+# Infrastructure design
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+![alt text](<Screenshot 2567-12-06 at 08.16.50.png>)
+
+# use case
+
+![alt text](<Screenshot 2567-12-06 at 08.16.49.png>)
+
+# documentation usecase, High level architecture, Infrastructure, ERD
+
+https://drive.google.com/file/d/1kclo0Y-sPSMhAauq7jJ6xsAFDayY5bNo/view?usp=sharing
 
 ## License
 
+```
 Nest is [MIT licensed](LICENSE).
+```
